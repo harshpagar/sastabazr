@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 2000px;
+        font-family: Arial, Verdana, sans-serif;
+
+    }
+
+    /* navbar */
+    #navbar {
+        height: 75px;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+        box-shadow: 2px 2px 10px;
+    }
+
+    #navbar ul {
+        display: flex;
+        justify-content: space-between;
+        margin: 14px;
+        gap: 20px;
+    }
+
+    #navbar ul li {
+        list-style-type: none;
+        /* width: 60px; */
+        /* background-color: chartreuse; */
+        height: 60px;
+    }
+
+    #navbar ul li:nth-child(2) {
+        /* background-color: darkblue; */
+        /* flex-grow: 2; */
+        border: 1px solid red;
+
+        width: 50%;
+        height: 66%;
+        border-radius: 6px;
+    }
+
+    #navbar ul li:nth-child(2) input {
+        width: 95%;
+        height: 40px;
+        /* border: 1px solid red; */
+        vertical-align: top;
+        border-radius: 6px;
+
+        border: hidden;
+        padding-left: 15px;
+        box-sizing: border-box;
+    }
+
+    #navbar button {
+        width: 5%;
+        height: 70%;
+        /* border: 1px solid red; */
+        background-color: white;
+        padding: 1%;
+        border-radius: 6px;
+        border: hidden;
+
+
+    }
+
+    #navbar button img {
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+        object-position: center center;
+
+    }
+
+    #navbar a {
+        color: rgb(177, 16, 16);
+        vertical-align: -webkit-baseline-middle;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* slide show */
+
+
+    /* mid */
+    #mid {
+        display: flex;
+    }
+
+    #mid>div {
+        width: 25%;
+        /* height: 100px; */
+        /* background-color: rgb(226, 226, 225); */
+        border-right: 2px solid rgb(228, 228, 228);
+        text-align: center;
+        padding: .5% 2%;
+    }
+
+    #mid>div:nth-child(4) {
+        /* background-color: brown; */
+        border-right: none;
+    }
+
+    #mid>div>a>p:nth-child(2) {
+        color: black;
+        font-size: 17px;
+        font-weight: 400;
+        margin: 6px;
+    }
+
+    #mid>div>a>p:nth-child(3) {
+        font-size: 13px;
+        color: #909090;
+    }
+
+    #mid a {
+        text-decoration: none;
+    }
+
+    /* login form */
+    #log {
+        /* background-color: rgb(178, 233, 248); */
+        background-color: white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 4;
+        display: none;
+        flex-direction: column;
+        width: 20%;
+        height: 400px;
+        text-align: center;
+        box-shadow: 4px 4px 10px;
+    }
+
+    #log>div {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #log input {
+        margin: 10px 0;
+        height: 30px;
+        border: 2px solid #4c4c4c;
+        border-radius: 5px;
+        padding: 2px;
+    }
+
+    #log button {
+        margin: 10px 0;
+        height: 30px;
+        /* border: 2px solid #009579; */
+        border-radius: 5px;
+        padding: 2px;
+
+    }
+
+    #log>div:nth-child(1) {
+        height: 40px;
+        position: relative;
+    }
+
+    #login_hide_btn {
+        transform: rotate(45deg);
+        cursor: pointer;
+        border: none;
+        margin: 6px;
+        font-size: 33px;
+        font-weight: bolder;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background-color: white;
+
+    }
+
+
+
+
+    /* banner */
+
+    #banner {
+        display: flex;
+        margin: 20px 0;
+        box-shadow: 1px 4px 10px 3px rgba(0, 0, 0, .3);
+    }
+
+    #banner>div {
+        width: 33%;
+    }
+
+    #banner>div img {
+        width: 100%;
+    }
+
+    /* category */
+
+
+    #cat>div:nth-child(1) {
+        display: flex;
+        background-color: #94a2ed;
+        justify-content: right;
+        height: 60px;
+
+
+    }
+
+
+    .logo {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        background-color: white;
+        padding: 15px;
+        left: 10px;
+        text-align: center;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 1px solid rgb(241, 241, 241);
+    }
+
+    .logo img {
+        width: 100%;
+        /* position: absolute; */
+        background-color: white;
+    }
+
+    #cat>div>div:nth-child(2) button {
+        width: 120px;
+        height: 40px;
+        margin-top: 5%;
+        margin-right: 10px;
+        /* height: 60px; */
+        /* position: absolute; */
+        /* background-color: red; */
+    }
+
+
+    #category {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        /* border: 2px solid black; */
+        /* background-color: wheat; */
+        padding: 10px 0;
+        row-gap: 10px;
+
+    }
+
+    #category>div {
+        width: 16%;
+        height: 220px;
+        padding: 20px;
+        text-align: center;
+        box-sizing: border-box;
+        border: 1px solid rgb(224, 224, 224);
+        border-radius: 10px;
+        box-shadow: 1px 4px 6px 1px rgba(0, 0, 0, .3);
+
+    }
+
+    #category>div img {
+        width: 60%;
+        margin-bottom: 20px;
+
+    }
+
+
+    /* sliding */
+
+
+    #slide {
+        /* width: 96%; */
+        height: 100%;
+
+    }
+
+
+
+    .mySlides {
+        display: none
+    }
+
+    .mySlides img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .slideshow-container {
+        position: relative;
+
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        /* transform: translate(-50%,-50%); */
+        width: auto;
+        padding: 16px;
+        /* margin-top: -22px; */
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 2s ease;
+        border-radius: 0 3px 3px 0;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        /* margin-right: 195px; */
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+        /* border: 2px solid rgb(184, 92, 18); */
+
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        display: none;
+    }
+
+    .active,
+    .dot:hover {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 6s;
+        animation-name: fade;
+        animation-duration: 6s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .8
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .8
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+        .text {
+            font-size: 11px
+        }
+    }
+
+    /* sliding */
+
+    #empt {
+        height: 90px;
+    }
+
+    /* sliding div for product */
+    .top {
+        /* border: 2px solid#fd858f; */
+        padding: 20px 0;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, .3);
+    }
+
+    .top>div:nth-child(1) {
+        height: 60px;
+        background-color: #fd858f;
+    }
+
+    .same {
+        margin-top: 20px;
+        display: flex;
+        height: 380px;
+        justify-content: unset;
+        position: relative;
+        padding: 0px 100px;
+    }
+
+    .same>div {
+        width: 23%;
+        display: none;
+        padding-top: 1%;
+        box-sizing: border-box;
+    }
+
+    .same>div:hover {
+        box-shadow: 2px 2px 10px;
+    }
+
+    .same button {
+        width: 40px;
+        cursor: pointer;
+        background: #f0ad4e;
+        color: #fff;
+        padding: 7px;
+        height: 28px;
+        text-align: center;
+    }
+
+    .pro_img {
+        height: 70%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .pro_img img {
+        height: 85%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .same>div>p {
+        text-align: center;
+        font-size: 1 em;
+        height: 20px;
+        margin: 10px 0
+    }
+
+    .same>div>div:nth-child(3) {
+        /* background-color: red; */
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        padding: 5% 15%;
+        color: red;
+        font-weight: bold;
+        align-items: center;
+    }
+
+    #left {
+        width: 70px;
+        position: absolute;
+        top: 40%;
+        left: 16px;
+        padding: 0 5px;
+    }
+
+    #right {
+        width: 70px;
+        position: absolute;
+        top: 40%;
+        right: 16px;
+        padding: 0 20px;
+    }
+
+    h2 {
+        padding-top: 15px;
+        padding-left: 8%;
+        color: white;
+        position: absolute;
+        left: 0%;
+    }
+
+    #cat button {
+        width: 100px;
+
+        height: 41px;
+        margin-top: 8px;
+        margin-right: 10px;
+    }
+
+    #deals>div:nth-child(1) {
+        background-color: #761a22;
+
+    }
+
+    .top button {
+        width: 100px;
+
+        height: 41px;
+        margin-top: 8px;
+        margin-right: 10px;
+    }
+
+    .top>div:nth-child(1) {
+        display: flex;
+        justify-content: right;
+        height: 60px;
+
+
+    }
+</style>
+
+<body onload="show(),show1()">
+
+    <div id="navbar">
+        <ul>
+            <li><img src="https://res.sastasundar.com/incom/sspl_website/images/sastasundar_logo_small.png" alt=""></li>
+            <li><input type="text" placeholder="Search for a Product or Brand"><button><img
+                        src="https://cdn-icons-png.flaticon.com/512/49/49116.png" alt=""></button></li>
+            <li><a href="">Address</a></li>
+            <li><a href="">7003407697</a></li>
+            <li><a href="">Offers</a></li>
+            <li><a id="login_btn" href="">Login</a></li>
+            <li><a href="addToCart.html">Cart</a></li>
+        </ul>
+    </div>
+
+    <div id="empt"></div>
+
+    <!-- sliding -->
+    <div id="sliding">
+        <div id="slide">
+            <div class="slideshow-container">
+                <div class="mySlides fade"> <img
+                        src="https://res.sastasundar.com/incom/incom_banner/1366/1632998667_medicine.jpg"> </div>
+                <div class="mySlides fade"> <img
+                        src="https://res.sastasundar.com/incom/incom_banner/1366/1631529375_newcomplanupto1.jpg"> </div>
+                <div class="mySlides fade"> <img
+                        src="https://res.sastasundar.com/incom/incom_banner/1366/1602576612_dnavita.jpg"> </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next"
+                    onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+    </div>
+    <!-- sliding -->
+    <div id="mid">
+        <div>
+            <a href="orderMedicine.html">
+                <img src="https://res.sastasundar.com/incom/sspl_website/images/homepage_v1/ordermedicine_s1.png"
+                    alt="">
+                <p>Order Medicine</p>
+                <p>Genuine Medicine. Maximum Discount Free Delivery at your door step</p>
+            </a>
+        </div>
+        <div>
+            <a href="orderbypc.html">
+
+                <img src="https://res.sastasundar.com/incom/sspl_website/images/homepage_v1/orderbyprescription_s1.png"
+                    alt="">
+                <p>Order by Prescription</p>
+                <p>Submit Your Prescription and Get Your Medicines at Home</p>
+            </a>
+
+        </div>
+        <div>
+            <a href="">
+
+                <img src="https://res.sastasundar.com/incom/sspl_website/images/homepage_v1/reordermedicine_s1.png"
+                    alt="">
+                <p>Reorder Medicine</p>
+                <p>Genuine Medicine. Maximum Discount Free Delivery at your door step</p>
+            </a>
+
+        </div>
+
+        <div>
+            <a href="">
+
+                <img src="https://res.sastasundar.com/incom/sspl_website/images/homepage_v1/shopbycategory_s1.png"
+                    alt="">
+                <p>Shop by Category</p>
+                <p>Genuine Products, Hygiene Storage, Low Price, Timely Delivery of Household Supplies.</p>
+            </a>
+
+        </div>
+
+    </div>
+    <!-- LOGIN -->
+    <div id="log">
+        <div><button id="login_hide_btn">+</button></div>
+        <div>
+            <input type="text" placeholder="Enter Your Mobile Number">
+            <input type="text" placeholder="Enter Your Password">
+        </div>
+        <div>
+            <a href="abc.html"><Button onclick="alter()">Login</Button></a>
+        </div>
+        <div><a href="">Create Account</a></div>
+    </div>
+
+    <!-- banner -->
+    <div id="banner">
+        <div>
+            <a href="">
+                <img src="https://res.sastasundar.com/incom/incom_banner/1630670695_666x160.jpg" alt="">
+            </a>
+        </div>
+        <div>
+            <a href="">
+                <img src="https://res.sastasundar.com/incom/incom_banner/1602174189_banner3.jpg" alt="">
+            </a>
+        </div>
+        <div>
+            <a href="">
+                <img src="https://res.sastasundar.com/incom/incom_banner/1630563342_666-x-160.jpg" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- shop by category -->
+    <div id="cat">
+        <div>
+            <div class="logo">
+                <img src="https://res.sastasundar.com/incom/sspl_website/images/homepage_v1/icon1.png" alt="">
+
+            </div>
+            <h2>Shop By Category</h2>
+
+            <div>
+                <a href=""><button>View All</button></a>
+            </div>
+        </div>
+        <div id="category">
+
+        </div>
+    </div>
+    <!-- top rated products -->
+    <div class="top">
+        <div>
+            <div class="logo">
+                <img src="	https://res.sastasundar.com/incom/sspl_website/images/homepage_v1/icon2.png" alt="">
+            </div>
+            <h2>Top Rated Products</h2>
+            <div>
+                <a href=""><button>View All</button></a>
+            </div>
+        </div>
+
+        <div id="pro" class="same">
+            <button id="left" onclick="moveleft()">Prev</button>
+
+            <button id="right" onclick="moveright()">Next</button>
+        </div>
+    </div>
+    <!-- featured product -->
+    <div class="top" id="deals">
+        <div>
+            <div class="logo">
+                <img src="	https://res.sastasundar.com/incom/sspl_website/images/homepage_v1/icon2.png" alt="">
+            </div>
+            <h2>Best Deals</h2>
+            <div>
+                <a href=""><button>View All</button></a>
+            </div>
+        </div>
+
+        <div id="feature" class="same">
+            <button id="left" onclick="moveleft1()">Prev</button>
+
+            <button id="right" onclick="moveright1()">Next</button>
+        </div>
+    </div>
+
+
+    <script src="abct.js"></script>
+</body>
+
+</html>
