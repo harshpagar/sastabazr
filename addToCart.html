@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add To Cart</title>
+</head>
+<style>
+
+    #container {
+        width: 1200 px;
+        margin: auto;
+    }
+
+    #products {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #products>div {
+        border: 12px solid #e5e5e5;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 10px auto;
+    padding: 22px;
+    height: 20%;
+    width: 60%;
+    font-size: 25px;
+    border-radius: 52px;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px;
+    align-items: center;
+    justify-content: space-between;
+
+    }
+
+    #nav1 {
+        position: fixed;
+        display: flex;
+        background-color: white;
+        width: 100%;
+        height: 60px;
+        padding: auto;
+        box-shadow: 2px 2px 10px;
+    }
+    #nav1 h2{
+       margin: 0;
+    }
+#image{
+    width: 200px;
+}
+    .img1 {
+        margin-top: 8px;
+    }
+
+
+    #cart_details>p {
+        flex-direction: column-reverse;
+    }
+
+    */ h1 {
+        text-align: center;
+    }
+
+    input,
+    button {
+        height: 25px;
+        margin: 5px;
+    }
+
+    .chkot {
+
+        margin: 20px auto;
+        font-size: 20px;
+        padding: 10px;
+        height: 50px;
+        width: 200px;
+        border-radius: 10px;
+        background-color: rgb(9, 42, 56);
+        color: white;
+        cursor: pointer;
+    }
+
+    #navdiv {
+        width: max-content;
+        padding: 20px;
+        margin: auto;
+
+    }
+
+    #d {
+        margin-left: 80%;
+        font-size: 15px;
+        color: rgb(233, 61, 61);
+    }
+
+    #div3 {
+        height: 350px;
+        width: 1520px;
+        background-color: white;
+        padding: 10px;
+
+    }
+
+    #nav4 {
+        display: flex;
+        font-size: 16px;
+    }
+
+    #p {
+        font-size: 15px;
+    }
+
+    #promo {
+        background-color: coral;
+        text-align: center;
+        width: max-content;
+        margin: auto;
+        border-radius: 14px;
+        padding: 10px;
+    }
+
+    #chec {
+        width: max-content;
+        margin: auto;
+    }
+
+    #emt {
+        height: 63px;
+    }
+</style>
+
+<body>
+    <!-- ----Navigation Bar---- -->
+    <div id="nav1">
+        <div id="image">
+            <img class="img1" src="https://res.sastasundar.com/incom/sspl_website/images/sastasundar_logo_small.png">
+        </div>
+        <div id="d">
+            <h2>Shopping Cart</h2>
+        </div>
+    </div>
+    <div id="emt">
+
+    </div>
+    <div id="container">
+
+
+
+        <!-- <div id="cart_details">
+            
+        </div> -->
+
+
+        <div id="products">
+
+        </div>
+        <div id="navdiv">
+            <h3 id="total"></h3>
+            <h3 id="totalamount"></h3>
+        </div>
+        <div id="promo">
+            <h3>Apply Promocode</h3>
+            <input type="text" id="code" placeholder="Promocode">
+            <button href="checkout.html" onclick="promocode()">submit</button>
+        </div>
+        <div id="chec">
+            <a href="checkout.html"> <button class="chkot"> Checkout </button> </a>
+        </div>
+    </div>
+    <div id="div3">
+        <p id="p">SastaSundar is creating a digital network to manage supply chain of wellness, pharma and information
+            services related to health. Our aim is to use digital connectivity and knowledge to provide genuine
+            medicines at reduced cost.</p>
+        <p id="p">SastaSundar is a communication medium. All orders are accepted & fulfilled by our specialists subject
+            to verification of valid prescription by the licensed chemist.</p>
+        <h5>SastaSundar.com – JUST FOR YOU</h5>
+        <p id="p">Detailed information about each medicine is provided on our website. Just click on any medicine to get
+            Drug Snapshot, Usage and Warnings.You</p>
+        <p id="p">You would be able to buy medicine online as well as search for substitute and generic medicines in
+            Sastasundar.com and can save big on your medicines by consulting your doctor.</p>
+        <p id="p">Order medicine online from Sastasundar.com and save on your medicine bill.</p>
+        <p id="p">How to order medicine online?</p>
+        <p id="p">Search for the required medication and shop for medicine online. Add it to cart. Upload the relevant
+            prescription. Proceed to payment and opt for the payment mode you are comfortable with. Rest assured you
+            will be delivered with genuine medicines at your doorstep. Currently our ambit of serviceable areas include
+            Delhi, NCR, Gurgaon and West Bengal.</p>
+
+        <nav id="nav4">
+            <p style="margin-left: 5px;">Policies</p>
+            <p style="margin-left: 10px;">Privacy Policy</p>
+            <p style="margin-left: 15px;">Disclaimer</p>
+            <p style="margin-left: 20px;">F.A.Q</p>
+            <p style="margin-left: 25px;">Terms & Conditions</p>
+            <p style="margin-left: 30px;">Return, Cancellation and Refund Policy</p>
+            <p style="margin-left: 35px;">Shipping</p>
+
+        </nav>
+    </div>
+
+
+</body>
+
+</html>
+<script src="addToCart.js">
+
+</script>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<style>
+    body {
+        background-color: rgb(194, 235, 235);
+        padding: 1%;
+    }
+
+    .container {
+        height: 100%;
+        width: 75%;
+        background-color: white;
+        padding: 20px;
+        margin: auto;
+    }
+
+    .pres_main_div {
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+
+    .pres_cont1 {
+        text-align: left;
+    }
+
+    .pres_name_right_part {
+        text-align: left;
+    }
+
+    .cdn_on_upldfile {
+        width: 100%;
+        height: auto;
+        background-color: rgb(236, 236, 157);
+    }
+
+    span {
+        color: red;
+    }
+
+    .upload_text {
+        color: black
+    }
+
+    .order_note {
+        width: 100%
+    }
+
+    .contact {
+        width: 100%
+    }
+
+    .col-lg-6 col-md-6 pad0 {
+        background-color: red;
+    }
+
+    #prescription_order_main {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .line_none {
+        color: white;
+        background-color: white;
+    }
+
+    #tc {
+        color: red
+    }
+
+
+    #submit {
+        background-color: rgb(0, 204, 255);
+        padding: 5px 20px;
+        color: white;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <div class="spacebtwn"></div>
+        <div class="orderbypres">
+            <h1>Order by Prescription</h1>
+        </div>
+
+        <div class="spacebtwn"></div>
+        <hr class="linebetween">
+        <div class="spacebtwn"></div>
+
+        <div class="spacebtwn"></div>
+        <div class="pres_main_div">
+            <div class="pres_cont1">
+                <strong class="pres_name">Prescription Name</strong>
+                <div class="clr"></div>
+                <input type="text" class="pres_name_input" placeholder="Prescription Name">
+            </div>
+
+            <div class="pres_name_right_part">SastaSundar.com is a communication medium. All orders are accepted and
+                fulfilled by our specialists subject to verification of Valid Prescription by the licensed chemist. By
+                accepting Terms and Conditions to use this Technology Service, you hereby confirm that you are placing
+                order only for fulfilment of valid prescription.</div>
+
+        </div>
+        <div class="choose_file"><label class="input_file_select">
+                <i class="icon_of_file"></i>
+                <input type="file" />
+            </label>
+        </div>
+        <div class="cdn_on_upldfile">
+            <p class="upload_text"><span>*</span> Only upload .jpg,.jpeg,.pdf files / <span>*</span> Max file size
+                should be 5mb / <span>*</span> You can upload maximum 4 images / <span>*</span> Prescription uploaded is
+                subject to verification</p>
+        </div>
+
+
+
+
+        <!-- after only upload conditions -->
+        <div id="prescription_order_main">
+
+            <div class="prescription_boxes">
+
+                <div class="text_order_note&Con_details">
+                    <h2>Order Note:</h2>
+                </div>
+                <hr class="hr">
+
+                <div id="text_all_med">
+                    <input type="radio">
+                    <label for="radio1">All Medicines (in prescription)</label>
+
+                </div>
+                <div id="text_all_med">
+                    <input type="radio">
+                    <label for="radio1">Order by sequence of medicine (as they appear in prescription)</label>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div class="prescription_boxes">
+                <div class="text_order_note&Con_details">
+                    <h2>Contact Details:</h2>
+                </div>
+
+                <hr class="hr">
+                <input type="text" placeholder="Mobile Number*" minlength="10" maxlength="11">
+                <hr class="line_none">
+                <input type="text" placeholder="Email Id ">
+                <hr class="line_none">
+                <input type="text" placeholder="Name*" minlength="5">
+                <hr class="line_none">
+                <input type="text" placeholder="Pin Code*" minlength="6" maxlength="6">
+                <hr class="line_none">
+            </div>
+
+
+
+
+        </div>
+
+        <form action="/action_page.php">
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> I hereby declare that I have placed this order for fulfillment of valid prescription.
+                I agree to all the <span id="tc"> Terms and Conditions</span></label><br>
+
+            <input type="submit" id="submit" value="SUBMIT">
+        </form>
+
+
+
+    </div>
+
+
+    </div>
+    </div>
+
+    <!-- After yellow -->
+
+
+
+
+</body>
+
+</html>
