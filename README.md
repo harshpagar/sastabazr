@@ -2,7 +2,7 @@ Sastasundhar is a Indian  website where we can order medicine and Healthcare pro
 wellness.
 In this project we have tried to make a look alike clone of sastasundhar.com With our efforts and the technology stack, that we have learned so far in the masai school.
 
-Technology Stack Used
+<strong>Technology Stack Used  </strong><br>
 HTML5  <br>
 CSS  <br>
 JavaScript (LocalStorage)  <br>
