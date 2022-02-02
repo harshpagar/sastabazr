@@ -16,7 +16,7 @@ function showProducts() {
     let img = document.createElement("img");
     img.src = products.img;
 
-    img.style.width = 150 + "px";
+    img.style.width = 150 + " px";
     let price = document.createElement("p");
     price.textContent = "Rs. "+products.price;
 price.style.color="red"
@@ -28,7 +28,7 @@ price.style.color="red"
 
     sum += products.price
   });
-  total.textContent = "Total Amount Rs."+(Math.floor(sum))
+  total.textContent = "Total Amount Rs." +(Math.floor(sum))
 }
 
 showProducts()
@@ -37,7 +37,7 @@ showProducts()
 function promocode() {
   console.log(code.value)
   if (code.value == "sasta30") {
-    total.textContent = "Total Amount Rs."+Math.floor(sum-(sum*.3))
+    total.textContent = "Total Amount Rs." +Math.floor(sum-(sum*.3))
   }
   else{
     alert("Invalid Promo Code")
